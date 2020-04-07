@@ -21,4 +21,4 @@ rm -f bootstrap/cache/*.php
 docker run --rm -v $(pwd):/app composer install
 echo php artisan migrate && echo Database migrated
 echo php artisan db:seed && echo Database seeded
-echo php artisan serve --port=8080 && echo Serving on Port 8080
+php artisan serve --port=8080
