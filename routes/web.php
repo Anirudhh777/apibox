@@ -21,6 +21,10 @@ Route::get('/register', function () {
     return view('main');
 })->name('register');
 
+Route::get('/dashboard', function() {
+	return view('dashboard');
+})->name('dashboard')->middleware('auth');
+
 Route::post('/login', 'AdminController@login');
 Route::post('/register', 'AdminController@register');
 

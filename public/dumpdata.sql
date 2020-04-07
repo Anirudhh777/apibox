@@ -1,3 +1,27 @@
+INSERT INTO `box_recipes` (`id`, `user_box_id`, `created_at`, `updated_at`, `recipe_id`) VALUES
+(1, 1, NULL, NULL, 1),
+(2, 1, NULL, NULL, 2),
+(3, 1, NULL, NULL, 3),
+(4, 1, NULL, NULL, 2),
+(5, 1, NULL, NULL, 3),
+(6, 1, NULL, NULL, 4),
+(7, 1, NULL, NULL, 2),
+(8, 1, NULL, NULL, 3),
+(9, 1, NULL, NULL, 4),
+(10, 1, NULL, NULL, 5),
+(11, 1, NULL, NULL, 3),
+(12, 1, NULL, NULL, 8),
+(13, 1, NULL, NULL, 5),
+(14, 1, NULL, NULL, 7),
+(15, 1, NULL, NULL, 8),
+(16, 1, NULL, NULL, 2),
+(17, 1, NULL, NULL, 7),
+(18, 1, NULL, NULL, 8),
+(19, 1, NULL, NULL, 2),
+(20, 1, NULL, NULL, 8),
+(21, 1, NULL, NULL, 8),
+(22, 1, NULL, NULL, 8);
+
 INSERT INTO `ingredients` (`id`, `name`, `measure`, `supplier`, `created_at`, `updated_at`) VALUES
 (1, 'Onion', 'kg', 'Xyz', '2020-04-07 03:43:03', NULL),
 (2, 'Tomatoe', 'kg', 'Xyz', '2020-04-07 03:43:16', NULL),
@@ -7,6 +31,17 @@ INSERT INTO `ingredients` (`id`, `name`, `measure`, `supplier`, `created_at`, `u
 (6, 'Steak', 'pieces', 'YYZ', '2020-04-07 03:44:33', NULL),
 (7, 'Rice', 'kg', 'MMK', '2020-04-07 03:44:53', NULL),
 (8, 'Salt', 'g', 'BBA', '2020-04-07 03:45:36', NULL);
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2019_08_19_000000_create_failed_jobs_table', 1),
+(3, '2020_04_07_042351_create_ingredients_table', 1),
+(4, '2020_04_07_042438_create_recipes_table', 1),
+(5, '2020_04_07_042508_create_recipe_ingredients_table', 1),
+(6, '2020_04_07_042639_create_user_box_table', 1),
+(7, '2020_04_07_043623_create_box_recipes_table', 1),
+(8, '2020_04_07_054042_add_quantity_column_to_recipe_ingredients_table', 1),
+(9, '2020_04_07_072843_add_recipe_id_to_box_recipes_table', 1);
 
 INSERT INTO `recipes` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES
 (1, 'Recipe 1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit gravida nibh. Nullam sed condimentum nibh, vitae aliquet mi.', '2020-04-07 03:48:35', NULL),
@@ -52,27 +87,3 @@ INSERT INTO `user_box` (`id`, `delivery_date`, `created_at`, `updated_at`) VALUE
 (5, '2020-04-14', NULL, NULL),
 (6, '2020-04-11', NULL, NULL),
 (7, '2020-04-25', NULL, NULL);
-
-INSERT INTO `box_recipes` (`id`, `user_box_id`, `created_at`, `updated_at`, `recipe_id`) VALUES
-(1, 1, NULL, NULL, 1),
-(2, 1, NULL, NULL, 2),
-(3, 1, NULL, NULL, 3),
-(4, 1, NULL, NULL, 2),
-(5, 1, NULL, NULL, 3),
-(6, 1, NULL, NULL, 4),
-(7, 1, NULL, NULL, 2),
-(8, 1, NULL, NULL, 3),
-(9, 1, NULL, NULL, 4),
-(10, 1, NULL, NULL, 5),
-(11, 1, NULL, NULL, 3),
-(12, 1, NULL, NULL, 8),
-(13, 1, NULL, NULL, 5),
-(14, 1, NULL, NULL, 7),
-(15, 1, NULL, NULL, 8),
-(16, 1, NULL, NULL, 2),
-(17, 1, NULL, NULL, 7),
-(18, 1, NULL, NULL, 8),
-(19, 1, NULL, NULL, 2),
-(20, 1, NULL, NULL, 8),
-(21, 1, NULL, NULL, 8),
-(22, 1, NULL, NULL, 8);
