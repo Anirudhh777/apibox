@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+docker container create kyleparisi/larasible
+
 set -e
 
 [ -f ".env.prod" ]
@@ -20,4 +22,4 @@ rm -f bootstrap/cache/*.php
 docker run --rm -v $(pwd):/app composer install
 echo php artisan migrate && echo Database migrated
 echo php artisan db:seed && echo Database seeded
-echo php artisan serve --port=8080
+echo php artisan serve --port=8080 && echo Serving on Port 8080
