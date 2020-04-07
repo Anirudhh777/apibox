@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 docker container create kyleparisi/larasible
 
 set -e
@@ -10,11 +8,12 @@ export $(cat .env.prod | grep -v ^# | xargs);
 echo Starting services
 docker-compose up -d
 echo Host: 127.0.0.1
-until docker-compose exec mysql mysql -h 127.0.0.1 -u $DB_USERNAME -p$DB_PASSWORD -D $DB_DATABASE --silent -e "show databases;"
+until docker-compose exec mysql mysql -p$DB_PASSWORD -e  "CREATE DATABASE IF NOT EXISTS apiBox;"
 do
   echo "Waiting for database connection..."
   sleep 5
 done
+
 echo Installing dependencies
 
 rm -f bootstrap/cache/*.php
